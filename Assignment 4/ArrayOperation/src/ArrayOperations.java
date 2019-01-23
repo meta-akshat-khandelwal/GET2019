@@ -330,10 +330,7 @@ public 	int[] fixXY(int[] array,int x,int y)
 			
 		}
 		
-		for(int i=0;i<array.length;i++)
-		{
-			System.out.println(array[i]);
-		}
+		
 		
 		return array;
 		
