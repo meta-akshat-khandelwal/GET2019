@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 
@@ -5,11 +6,11 @@ public class ArrayOperations {
 
 	
 	/*
-	 * checkEqual method to check the equal value of x and y
+	 * To check the equal value of x and y
 	 * @param array contain array
 	 * @param numX number of x present in array
 	 * @param numY number of y present in array
-	 * return true if numX == numY
+	 * returns true if numX == numY, false otherwise
 	 */
 	boolean checkEqual(int[] array,int x,int y)
 	{
@@ -38,9 +39,9 @@ public class ArrayOperations {
 	}
 	
 	/*
-	 * checkLastIndex method to check the last index array element
+	 * method to check the last index array element
 	 * @param array contain array value
-	 * return true if last index value is x
+	 * returns true if last index value is x, AssertionError exception otherwise
 	 */
 	boolean checkLastIndex(int[] array,int x)
 	{
@@ -60,9 +61,9 @@ public class ArrayOperations {
 	
 	
 	/*
-	 * adjacentX method to check two adjacent value of x
+	 *  method to check two adjacent value of x
 	 * @param array contain array value
-	 * return true if two adjacent value of x present
+	 * returns true if two adjacent value of x present, AssertionError exception otherwise
 	 */
 	boolean adjacentX(int[] array,int x)
 	{
@@ -82,11 +83,11 @@ public class ArrayOperations {
 	}
 	
 	/*
-	 * returnLengthArray method is used to compute the length of the input array
+	 *  method  to compute the length of the input array
 	 * @param requires an array of integers, assumes array is of integer type
-	 * @return the length of array if array is not null, otherwise will throw an exception
+	 * @returns the length of array if array is not null, otherwise throws an exception
 	 */
-	public int returnLengthArray(int[] inputArray)
+	public int claculateLengthArray(int[] inputArray)
 	{
 		int lengthArray=inputArray.length;
 		
@@ -99,11 +100,11 @@ public class ArrayOperations {
 			return lengthArray;
 	}
 	
-	/*
-	 * maximumMirrorCount method is used to find the sub-array which is mirror image of already present sub-array
-	 * @param requires the input array of integer, will throw an exception if array is null, assumes input is array of positive integers
-	 * @return the length of array whose mirror image is available else will return the exception
-	 */
+   /*
+	*  method  to find the sub-array which is mirror image of already present sub-array
+	* @param  input array , will throw an exception if array  is null
+	* @returns the length of array whose mirror image is available else will return  exception
+	*/
 	
 	public int maximumMirrorCount(int[] inputArray)
 	{
@@ -114,7 +115,7 @@ public class ArrayOperations {
 		
 		try
 		{
-			length = returnLengthArray(inputArray);
+			length = claculateLengthArray(inputArray);
 			
 			for(index1 = 0 ; index1 < length ; index1++)
 			{
@@ -157,9 +158,11 @@ public class ArrayOperations {
 	}
 	
 	/*
-	 * splitArray method to find the index where the sum of left side and right side is equal
-	 * @param requires the array if integers ,will throw an exception if array is empty ,assumes input is array of positive integers
-	 * @return the index where the sum of left and right side is equal or will return an exception or if sum is not equal in any case then will return -1 
+	 * method to find the index where the sum of left side and right side is equal
+	 * @param requires the array if integers , will throw an exception if array is empty ,
+	   assumes input is array of positive integers
+	 * @returns the index where the sum of left and right side is equal 
+	   or will return an exception or if sum is not equal in any case then will return -1 
 	 */
 	public int splitArray(int[] inputArray)
 	{
@@ -168,7 +171,7 @@ public class ArrayOperations {
 		
 		try
 		{
-			length = returnLengthArray(inputArray);
+			length = claculateLengthArray(inputArray);
 			for(index = 0 ; index < length ; index++)
 			{
 				
@@ -205,9 +208,10 @@ public class ArrayOperations {
 	}
 	
 	/*
-	 * countClumbs method is use to find the number of clumbs which have a series of 2 or more adjacent elements of the same value
-	 * @param requires an array of integer type, will throw an exception if array is empty ,assumes input is array of positive integers
-	 * @return the number of clumb 0 if any clumb is not present or will return the number of clumbs
+	 * method  to find the number of clumbs which have a series of 2  or 
+	   more adjacent elements of the same value
+	 * @param requires an array of integer type, will throw an exception if array is empty
+	 * @returns the number of clumb 0 if any clumb is not present or will return the number of clumbs
 	 */
 	public int countClumbs(int[] inputArray)
 	{
@@ -217,11 +221,12 @@ public class ArrayOperations {
 		
 		try
 		{
-			length = returnLengthArray(inputArray);
+			length = claculateLengthArray(inputArray);
 			
 			int size=1;
+			// to store 1st value of array
 			previousvalue=inputArray[0];
-			
+		
 			for(int i=1;i<inputArray.length;i++)
 			{
 				currentvalue=inputArray[i];
@@ -233,7 +238,7 @@ public class ArrayOperations {
 				
 				if(previousvalue != currentvalue || i==inputArray.length-1)
 				{
-					
+					//if size of clumb is greater than 2 than increase clumb by 1 
 					if(size>=2)
 					{
 						clumbCount++;
@@ -258,24 +263,23 @@ public class ArrayOperations {
 	
 	/*
 	 * fitXY will change the position of Y after the value of X without changing the position of X
-	 * @param requires the array of Integer assumes array is of integer type,
-	 * 		  valueOfX, valueOfY, which will hold the value of X and Y
+	 * @param array of inputs
 	 *        it will throw an exception an exception in the following cases:
 	 *        1: if array is empty
 	 *        2: if two consecutive value of X is present in an array
 	 *        3: it value of X is present at the last index of array
 	 *        4: if total number of X is not equal to total number of Y
-	 * @return an array of integer with the modification as stated.
+	 * @returns an array with modifications
 	 */
 	
-public 	int[] fixXY(int[] array,int x,int y)
+   public int[] fixXY(int[] array,int x,int y)
 	{
 		
 		int lengthArray = 0;
 	
 		try
 		{
-			lengthArray = this.returnLengthArray(array);
+			lengthArray = this.claculateLengthArray(array);
 			this.adjacentX(array, x);
 			this.checkEqual(array, x, y);
 			this.checkLastIndex(array, x);
@@ -286,8 +290,9 @@ public 	int[] fixXY(int[] array,int x,int y)
 			throw exception;
 		}
 		
-	
+	    //to store the index of x
 		ArrayList<Integer> indexX= new ArrayList<Integer>(); 
+		//to store the index of y
 		ArrayList<Integer> indexY= new ArrayList<Integer>();
 		
 		
@@ -313,6 +318,7 @@ public 	int[] fixXY(int[] array,int x,int y)
 		int temp;
 		
 		System.out.println("\n");
+		// to place the y next to x in array
 		for(int i=0;i<array.length-1;i++)
 		{	
 		
