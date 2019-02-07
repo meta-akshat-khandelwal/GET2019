@@ -1,0 +1,50 @@
+*{
+    height: 100%;
+}
+
+#container{
+    height: 200px;
+    width:200px;
+    position: absolute;
+}
+
+.square{
+    width:100px;
+    height:100px;
+    display: inline-block;
+    animation: animation 2s;
+    position: absolute;                                                                                                      ;
+    animation-iteration-count: infinite; 
+}
+
+#purple{
+   background-color: rgb(112, 40, 180);
+   animation-delay: 0.5s;
+}
+
+#red{
+    background-color:rgb(240, 92, 66);
+    animation-delay: 0s;
+}
+#yellow{
+    background-color:rgb(231, 219, 56);
+    animation-delay: 1.5s;
+}
+
+#blue{
+    background-color:rgb(106, 193, 228);
+    animation-delay: 1.0s;
+}
+
+@keyframes animation{
+    0%{top:0px; left: 0px; }
+    25%{top:100px ; left:0px;}
+    50%{top:100px ; left: 100px;}
+    75%{top:0 px; left :100px;}
+    100%{top:0px;left :0px;}
+
+
+}
+
+
+
