@@ -7,7 +7,7 @@
     width:200px;
     position: absolute;
 }
-
+/*square*/
 .square{
     width:100px;
     height:100px;
@@ -17,25 +17,31 @@
     animation-iteration-count: infinite; 
 }
 
+/*purple Square*/
 #purple{
    background-color: rgb(112, 40, 180);
    animation-delay: 0.5s;
 }
 
+/*Red Square*/
 #red{
     background-color:rgb(240, 92, 66);
     animation-delay: 0s;
 }
+
+/*Yellow Square*/
 #yellow{
     background-color:rgb(231, 219, 56);
     animation-delay: 1.5s;
 }
 
+/*Blue Square*/
 #blue{
     background-color:rgb(106, 193, 228);
     animation-delay: 1.0s;
 }
 
+/*for animation of squares*/
 @keyframes animation{
     0%{top:0px; left: 0px; }
     25%{top:100px ; left:0px;}
