@@ -1,21 +1,31 @@
 <html>
   <head>
      
-    <script src="script.js">
-      </script>
+    <script src="script.js"> </script>
+     <script src="doublyLinkedListScript.js"></script>
   </head>
   <body align="center">
       
   <h1> Linked list</h1>
   
-      <label>Enter Element</label>
-      <input id="input" type="text" />
-      <br><br>
-      <input type="submit" id="btn" onclick=object.add() value="Add element" />
+      <label>Enter Element in Single Linked list</label>
+      <input id="input" type="text" /><br>
+     
+      <input type="submit" id="btn" onclick=object.addElement() value="Add element" />
      
       <input type="button" id="btn1" onclick=object.removeElement() value="Remove element" />
       
-      <input type="submit" id="btn2"  onclick=object.printList() value="Print list" />
+    
+
+      <br><br>
+      <label>Enter Element in Doubly Linked list</label>
+      <input id="input" type="text" /><br>
+      
+      <input type="submit" onclick=doubleObject.addDouble() value="Add element" />
+     
+      <input type="button"  onclick=doubleObject.deleteDouble() value="Remove element" />
+      
+      
     
     <h2 id="show"></h2>
     

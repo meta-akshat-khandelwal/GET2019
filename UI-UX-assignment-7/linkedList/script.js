@@ -1,4 +1,5 @@
 class Node { 
+	 //intializes the node with the data
 	constructor(element) 
 	{ 
 		this.element = element; 
@@ -7,90 +8,92 @@ class Node {
 } 
  
 class LinkedList { 
+	 //intialize the Linked List
 	constructor() 
 	{ 
 		this.head = null; 
 		this.size = 0; 
 	} 
 
-	 
-add() 
-{ 
-    let element=document.getElementById("input").value;
-    if(element=="") 
-    {
-        alert("Input cannot be null..")
-    }
-    else
-    {
-	var node = new Node(element); 
+	 // addelement to the list
+	addElement() 
+	{ 
+		let element=document.getElementById("input").value;
+		if(element=="") 
+		{
+			alert("Input cannot be null..")
+		}
+		else
+		{
+		var node = new Node(element); 
 
-	var current; 
+		var current; 
 
-	if (this.head == null) 
-		this.head = node; 
-	else { 
-		current = this.head; 
+		if (this.head == null) 
+			this.head = node; 
+		else { 
+			current = this.head; 
 
-		
-		while (current.next) { 
-			current = current.next; 
-		} 
-
-		 
-		current.next = node; 
-	} 
-    this.size++; 
-    }
-    document.getElementById("input").value="";
-    
-} 
-
-
-     
-removeElement() 
-{ 
-    let element=document.getElementById("input").value;
-    if(element=="") 
-    {
-        alert("Input cannot be null..")
-    }
-    else
-    {
-	var current = this.head; 
-	var prev = null; 
-
-	while (current != null) { 
-		
-		if (current.element === element) { 
-			if (prev == null) { 
-				this.head = current.next; 
-			} else { 
-				prev.next = current.next; 
+			
+			while (current.next) { 
+				current = current.next; 
 			} 
-			return current.element; 
-		} 
-		prev = current; 
-		current = current.next; 
-    } 
-    document.getElementById("input").value="";
-   
-    return -1;
-    } 
-} 
 
-printList() 
-{ 
-	var curr = this.head; 
-	var str = ""; 
-	while (curr) { 
-		str += curr.element + " "; 
-		curr = curr.next; 
-    } 
-    if(str=="") alert("no element");
-    
-	document.getElementById("show").innerHTML=str; 
-} 
+			
+			current.next = node; 
+		} 
+		this.size++; 
+		this.printList();
+		}
+		document.getElementById("input").value="";
+		
+	} 
+
+
+     // removes element from list
+	removeElement() 
+	{ 
+		let element=document.getElementById("input").value;
+		if(element=="") 
+		{
+			alert("Input cannot be null..")
+		}
+		else
+		{
+		var current = this.head; 
+		var prev = null; 
+
+		while (current != null) { 
+			
+			if (current.element === element) { 
+				if (prev == null) { 
+					this.head = current.next; 
+				} else { 
+					prev.next = current.next; 
+				} 
+				break;
+			} 
+			prev = current; 
+			current = current.next; 
+		}
+		this.printList(); 
+		
+		} 
+		document.getElementById("input").value="";
+	} 
+
+	printList() 
+	{ 
+		var curr = this.head; 
+		var str = ""; 
+		while (curr) { 
+			str += curr.element + " "; 
+			curr = curr.next; 
+		} 
+		if(str=="") alert("no element");
+		
+		document.getElementById("show").innerHTML=str; 
+	} 
 
 } 
 let object=new LinkedList();
