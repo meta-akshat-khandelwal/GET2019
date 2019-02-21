@@ -68,6 +68,21 @@ public class ProductFacade {
 	}
 	
 	
+	public Product getProduct(int code)
+	{
+		for(int i=0;i<listOfproduct.size();i++)
+		{
+			
+		if(listOfproduct.get(i).getCode() == code)
+		{
+			return listOfproduct.get(i);
+		}
+		}
+		return null;
+		
+	}
+	
+	
 //	public static void main(String args[])
 //	{
 //		productDao pro= new productDao();

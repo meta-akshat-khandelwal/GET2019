@@ -2,6 +2,6 @@ package com.metacube.shoppingcart.enums;
 
 public enum status {
 	
-	SUCCESSFULL,ERROR,NOTSUCESSFULL,DUPLICATE;
+	SUCCESSFULL,ERROR,NOTSUCESSFULL,DUPLICATE, NOTEXISTS, NOTAVAILABLE;
 
 }

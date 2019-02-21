@@ -65,6 +65,21 @@ public class UserFacade {
 	}
 	
 	
+	public User getUser(int id)
+	{
+		for(int i=0;i<listOfUsers.size();i++)
+		{
+			if(listOfUsers.get(i).getId() == id)
+				return listOfUsers.get(i);
+		}
+		
+		return null;
+	}
+
+
+
+	
+	
 	
 //	public static void main(String args[])
 //	{

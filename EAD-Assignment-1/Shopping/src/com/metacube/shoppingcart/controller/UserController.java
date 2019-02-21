@@ -41,4 +41,11 @@ public class UserController {
 	
 	}
 	
+	public User getuser(int id)
+	{
+		User user= userFacade.getUser(id);
+		
+		return user;
+	}
+	
 }
