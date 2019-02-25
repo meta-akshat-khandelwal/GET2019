@@ -5,12 +5,25 @@ import java.util.ArrayList;
 import com.metacube.shoppingCart.dao.productDao;
 import com.metacube.shoppingCart.enums.status;
 import com.metacube.shoppingCart.model.Product;
-
+/**
+ * performs the following task:
+ * 1. Add the Product to store
+ * 2. removes the product from store
+ * 3. updates the product  in store
+ * 4. Return list of products
+ * @author Akshat
+ *
+ */
 public class ProductFacade {
 
 	productDao productdao= new productDao();
     ArrayList<Product> listOfproduct=productdao.getAllProduct();
 	
+    /*
+     * adds product to store
+     * @param, product
+     * @returns status
+     */
 	public status addProduct(Product product)
 	{
 		for(int i=0;i<listOfproduct.size();i++)
@@ -29,11 +42,20 @@ public class ProductFacade {
 			return status.SUCCESSFULL;
 	}
 	
+	/*
+	 * Gives all products in store
+	 * @returns list of all products in store
+	 */
 	public ArrayList<Product> getAllProduct()
 	{
 		return listOfproduct;
 	}
 	
+	/*
+	 * deletes product from store
+	 * @param product
+	 * @returns status
+	 */
 	public status deleteProduct(Product product)
 	{
 		for(int i=0;i<listOfproduct.size();i++)
@@ -42,7 +64,6 @@ public class ProductFacade {
 		if(listOfproduct.get(i).getCode()==product.getCode())
 		{
 			productdao.delete(listOfproduct.get(i));
-			System.out.println("deleted");
 			return status.SUCCESSFULL;
 			
 		}
@@ -51,7 +72,11 @@ public class ProductFacade {
 		
 	}
 	
-	
+	/*
+	 * updates the product in store
+	 * @param, product
+	 * @returns status
+	 */
 	public status updateProduct(Product product)
 	{
 		for(int i=0;i<listOfproduct.size();i++)
@@ -61,7 +86,6 @@ public class ProductFacade {
 		{
 			System.out.println(listOfproduct.get(i).getCode());
 			productdao.update(listOfproduct.get(i), product);
-			System.out.println("updated");
 			return status.SUCCESSFULL;
 			
 		}
@@ -69,6 +93,12 @@ public class ProductFacade {
 		return status.NOTSUCESSFULL;
 	}
 	
+	/*
+	 * updates quantity of product in store
+	 *@param, code of product
+	 *@param quantity of product
+	 *Returns status 
+	 */
 	public status updateProductQuantity(int code,int qty)
 	{
 		for(int i=0;i<listOfproduct.size();i++)
@@ -84,7 +114,11 @@ public class ProductFacade {
 		return status.NOTSUCESSFULL;
 	}
 	
-	
+	/*
+	 * Get product corresponding to its code
+	 * @param, code of product
+	 * @returns status
+	 */
 	public Product getProduct(int code)
 	{
 		for(int i=0;i<listOfproduct.size();i++)
@@ -99,37 +133,6 @@ public class ProductFacade {
 		
 	}
 	
-	
-//	public static void main(String args[])
-//	{
-//		productDao pro= new productDao();
-////		ArrayList<Product> li= pro.getAllProduct();
-//		
-//		Product p1= new Product(1, "asdf", "qwer", 1200);
-//		Product p2= new Product(2,"zxcv","qwer",1800);
-//		Product p3= new Product(1, "a", "qwer", 1200); //
-//		Product p4= new Product(1, "poiu", "qwr", 1200);
-//		ProductFacade facade= new ProductFacade();
-//		
-//		facade.addProduct(p1);
-//		facade.addProduct(p2);
-//		facade.addProduct(p3);
-//		facade.updateProduct(p4);
-//		facade.deleteProduct(p2);
-//		
-//		
-//		ArrayList<Product> li= pro.getAllProduct();
-//		
-//		for(int i=0;i<li.size();i++)
-//		{
-//			System.out.println(li.get(i).getName());
-//			System.out.println(li.size());
-//		}
-//		
-//		
-//		
-//	}
-//	
 	
 	
 }

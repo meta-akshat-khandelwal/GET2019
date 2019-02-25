@@ -1,5 +1,8 @@
 package com.metacube.shoppingCart.view;
-
+/**
+ * User interaction class called view
+ * @author Akshat
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +10,6 @@ import com.metacube.shoppingCart.controller.CartController;
 import com.metacube.shoppingCart.controller.UserController;
 import com.metacube.shoppingCart.enums.status;
 import com.metacube.shoppingCart.facade.ProductFacade;
-import com.metacube.shoppingCart.facade.UserFacade;
 import com.metacube.shoppingCart.model.Item;
 import com.metacube.shoppingCart.model.Product;
 import com.metacube.shoppingCart.model.User;
@@ -15,7 +17,9 @@ import com.metacube.shoppingCart.model.User;
 public class StartView {
 
 	
-	
+	/*
+	 * displays main menu
+	 */
 	public void showMainMenu()
 	{
 		System.out.println("Press 1 to Add Item to Cart");
@@ -23,6 +27,9 @@ public class StartView {
 		System.out.println("Press 0 to Exit");
 	}
 	
+	/*
+	 * displays cart menu
+	 */
 	public void ShowCartMenu()
 	{
 		System.out.println("Press 1 to add more products..");
@@ -32,6 +39,9 @@ public class StartView {
 		
 	}
 	
+	/*
+	 * displays all products in store
+	 */
 	public void showProducts()
 	{	
 		ProductFacade productFacade= new ProductFacade();
@@ -53,10 +63,9 @@ public static void main(String args[])
 		Scanner sc= new Scanner(System.in);
 		StartView startview = new StartView();
 		UserController userController= new UserController();
-		UserFacade userFacade= new UserFacade();
-		ProductFacade productFacade= new ProductFacade();
 		CartController cartController= new CartController();
-		
+		 
+		// user id
 		int userid=1001;
 		System.out.println("Can I know your name");
 		String name=sc.next();
@@ -64,6 +73,9 @@ public static void main(String args[])
 		System.out.println("\n Your User Id is "+user.getId()+"\n");
 		startview.showProducts();
 		startview.showMainMenu();
+		
+		System.out.println("Input should be valid positive number only ");
+		
 		int cartChoice;
 		int choice=sc.nextInt();
 		int productid,productQty; 
@@ -102,6 +114,7 @@ public static void main(String args[])
 						 for(int i=0;i<cartList.size();i++)
 						 {
 							 Item item= cartList.get(i);
+							 // display all item in cart
 							 System.out.println(item.getCode()+"\t"+item.getName()+
 				                     "\t\t"+item.getType()+"\t\t"+item.getPrice()+
 			                        	"\t\t"+item.getQty());
@@ -143,9 +156,11 @@ public static void main(String args[])
 							     for(int i=0;i<cartList.size();i++)
 							     {
 								 Item item= cartList.get(i);
+								// display all item in cart
 								 System.out.println(item.getCode()+"\t"+item.getName()+
 					                     "\t\t"+item.getType()+"\t\t"+item.getPrice()+
 				                        	"\t\t"+item.getQty());
+								  //calculates bill amount
 								 billAmount=billAmount+(item.getPrice()*item.getQty());
 							      } 
 							     System.out.println("Hello "+user.getName());

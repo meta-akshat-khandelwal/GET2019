@@ -7,12 +7,25 @@ import com.metacube.shoppingCart.facade.CartFacade;
 import com.metacube.shoppingCart.facade.ProductFacade;
 import com.metacube.shoppingCart.model.Item;
 import com.metacube.shoppingCart.model.Product;
-
+/**
+ * performs the following task:
+ * 1. Add the Item to cart
+ * 2. removes the Item from cart
+ * 3. updates the Item in cart
+ * 4. Return Cart
+ * @author Akshat
+ *
+ */
 public class CartController {
 	
 	CartFacade cartFacade= new CartFacade();
 	ProductFacade productFacade= new ProductFacade();
-	
+	/*
+	 * Adds the Item to cart
+	 * @param, id of item.
+	 * @param, Quantity of item.
+	 * @return not-available if item not available else sucessfull  
+	 */
 	public status addItem(int id, int qty)
 	{   
 		    if(qty<=0)
@@ -30,13 +43,17 @@ public class CartController {
 			{
 				
 				return cartFacade.addItem(item);
-			
-			
 		
 			}
 			
 			return cartFacade.addItem(item);
 	}
+	
+	/*
+	 * removes the item from cart
+	 * @param, id of item to be removed
+	 * @return not successful if item is removed  else not-sucessfull
+	 */
 	
 	public status removeItem(int id)
 	{
@@ -52,7 +69,12 @@ public class CartController {
 	 
 	}
 	
-	
+	/*
+	 * updates the quantity of item in cart
+	 * @param, id of item
+	 * @param, quantity of item
+	 * @ status type of enum
+	 */
 	
 	public status updateItem(int id , int qty)
 	{  
@@ -83,6 +105,11 @@ public class CartController {
 		return status.NOTSUCESSFULL;
 	}	
 	
+	
+	/*
+	 * all item in cart
+	 * @return list of item in cart
+	 */
 	public ArrayList<Item> getCart()
 	{
 		return cartFacade.getCart();

@@ -3,16 +3,18 @@ package com.metacube.shoppingCart.dao;
 	import java.util.ArrayList;
 
 import com.metacube.shoppingCart.model.Product;
-import com.metacube.shoppingCart.model.User;
-
+/**
+ *Stores all the products
+ * Singleton class
+ * Get the list of products 
+ **/
 
 	public class Store {
 		
 		private static Store obj=null;
-		private ArrayList<User> userList= new ArrayList<User>();
 		private ArrayList<Product> productList= new ArrayList<Product>();
 		
-		
+		// adds the products to store
 		   private Store(){
 		     Product p1= new Product(1,"shirts","clothing",1000,10);
 		     Product p2= new Product(2,"chips","snacks",50,150);
@@ -48,12 +50,10 @@ import com.metacube.shoppingCart.model.User;
 		        return obj;
 		   }
 		   
-		   
-		   public  ArrayList<User> getUserList()
-		   {
-			   return userList;
-		   }
-		   
+		    /*
+		     * Get all products
+		     * @return list of products
+		     */
 		   public  ArrayList<Product> getProductList()
 		   {
 			   return productList;

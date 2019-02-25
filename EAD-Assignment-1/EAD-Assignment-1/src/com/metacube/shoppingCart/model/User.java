@@ -1,5 +1,9 @@
 package com.metacube.shoppingCart.model;
-
+/**
+ * Creates the user with some attributes
+ * @author Akshat
+ *
+ */
 public class User {
 
 	private int id;

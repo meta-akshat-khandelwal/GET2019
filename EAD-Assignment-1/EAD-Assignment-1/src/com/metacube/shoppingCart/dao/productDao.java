@@ -6,7 +6,15 @@ import java.util.ArrayList;
 import com.metacube.shoppingCart.dao.Store;
 import com.metacube.shoppingCart.enums.status;
 import com.metacube.shoppingCart.model.Product;
-
+/**
+ * performs the following task:
+ * 1. Add the Product to store
+ * 2. removes the product from store
+ * 3. updates the product  in store
+ * 4. Return list of products
+ * @author Akshat
+ *
+ */
 public class productDao {
 
 	
@@ -15,7 +23,11 @@ public class productDao {
 	
 	ArrayList<Product> productList= s.getProductList();
 	
-	
+	/*
+	 * adds the product to store
+	 * @param, Product to be added
+	 * @returns status 
+	 */
 	public status add(Product product)
 	{
 		if(productList.add(product))
@@ -27,7 +39,11 @@ public class productDao {
 		
 	}
 	
-	
+	/*
+	 * deletes the product from store
+	 * @param, product to be delete
+	 * @returns status
+	 */
 	public status delete(Product product)
 	{
 		if(productList.remove(product))
@@ -36,7 +52,12 @@ public class productDao {
 		return status.NOTSUCESSFULL;
 	}
 	
-	
+	/*
+	 * Updates product in store
+	 * @param, old product 
+	 * @param new product
+	 * @returns status
+	 */
 	public status update(Product product, Product updateProduct)
 	{
 		int index;
@@ -46,6 +67,10 @@ public class productDao {
 		return status.SUCCESSFULL;
 	}
 	
+	/*
+	 *Get list of all products
+	 *returns list of products 
+	 */
 	public ArrayList<Product> getAllProduct()
 	{
 		return productList;

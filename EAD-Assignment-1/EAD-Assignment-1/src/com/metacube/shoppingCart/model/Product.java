@@ -1,5 +1,9 @@
 package com.metacube.shoppingCart.model;
-
+/**
+ * Creates the product with attributes
+ * @author Akshat
+ *
+ */
 public class Product {
 	private int code;
 	private String name;
