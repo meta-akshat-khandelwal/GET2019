@@ -11,7 +11,6 @@
 <title>Login</title>
 </head>
 <body align="center">
-<div class="container">
 		<form action ="loginadmin" method="get">
 			<span>ID</span><br>
 			<input type="text" name="id"  placeholder="Enter ID..." required/><br>
@@ -21,6 +20,6 @@
 		</form>
 		
 		
-	</div>
+
 </body>
 </html>
