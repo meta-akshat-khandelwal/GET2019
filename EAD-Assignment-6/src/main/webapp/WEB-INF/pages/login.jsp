@@ -10,13 +10,13 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <title>Login</title>
 </head>
-<body>
+<body align="center">
 <div class="container">
 		<form action ="loginadmin" method="get">
-			<span>ID</span>
-			<input type="text" name="id" class="form-control" placeholder="Enter ID..." required/>
-			<span>Enter Password</span>
-			<input type="password" name="password" class="form-control" placeholder="Enter Password" required/>
+			<span>ID</span><br>
+			<input type="text" name="id"  placeholder="Enter ID..." required/><br>
+			<span>Enter Password</span><br>
+			<input type="password" name="password" placeholder="Enter Password" required/><br>
 			<input type="submit" value="Login">
 		</form>
 		
