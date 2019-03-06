@@ -37,7 +37,8 @@ private JdbcTemplate jdbcTemplate;
 	 */
 	public boolean addUser(User user)
 	{
-		return jdbcTemplate.update(Query.insertUser, user.getFirst_name(), user.getLast_name(), user.getContact_number(), user.getEmail()) > 0;
+		return jdbcTemplate.update(Query.insertUser, user.getFirst_name(), user.getLast_name(), 
+					   user.getContact_number(), user.getEmail()) > 0;
 	}
 
 	/*
@@ -57,7 +58,8 @@ private JdbcTemplate jdbcTemplate;
 	 */
 	public boolean updateUser(User user) 
 	{
-		return jdbcTemplate.update(Query.updateUser, user.getFirst_name(), user.getLast_name(), user.getContact_number(), user.getEmail(), user.getId()) > 0;
+		return jdbcTemplate.update(Query.updateUser, user.getFirst_name(), user.getLast_name(),
+					   user.getContact_number(), user.getEmail(), user.getId()) > 0;
 	}
 	
 	
@@ -68,25 +70,6 @@ private JdbcTemplate jdbcTemplate;
 	public List<User> getAllUser()
 	{
 		return jdbcTemplate.query(Query.getAllUser, new UserMapper());
-	}
-	
-	
-	/*
-	 * get user by id
-	 * @param, id
-	 * @return User, else null
-	 */
-	public User getUserByID(int id)
-	{
-		List<User> userList = getAllUser();
-		for(User u : userList)
-		{
-			if(u.getId() == id)
-			{
-				return u;
-			}
-		}
-		return null;
 	}
 	
 	/*
