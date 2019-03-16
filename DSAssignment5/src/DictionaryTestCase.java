@@ -42,9 +42,17 @@ Dictionary dictionary;
 	
 	//Positive test case of deleting the data
 	@Test
-	public void test_deleteNodeWithvalidInputShouldReturnFalse() throws Exception
+	public boolean test_deleteNodeWithvalidInputShouldReturnFalse() 
 	{
+		try{
+			
 		assertTrue(dictionary.delete("200"));
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
 		
 	}
 	
@@ -59,27 +67,36 @@ Dictionary dictionary;
 	
 	//Positive test case to get the sublist from the tree
 	@Test
-	public void test_getSortedKeyValueBetweenKeysWithValidInputShouldreturnValidList()
+	public boolean test_getSortedKeyValueBetweenKeysWithValidInputShouldreturnValidList()
 	{
 		try{
-		System.out.println("\nSublist contains\n");
+		
 		for(Data d : dictionary.getSortedKeyValueBetweenKeys("200", "300"))
 		{
 			System.out.println(d.getKey()+"  "+d.getValue());
+			
 		}
+			return true;
 		}
 		catch(Exception e)
 		{
-			System.out.println(e.getMessage());
+			return false;
 		}
 	}
 
 	
 	//positive test case to get the value of given key
 	@Test
-	public void test_getValueWithvalidInputShouldReturnValue() throws Exception
+	public boolean test_getValueWithvalidInputShouldReturnValue()
 	{
+		try{
+			
 		assertEquals("Four Hundred", dictionary.getValue("400"));
+		}
+		catch(Exception e)
+		{
+			return false;
+		}	
 	}
 	
 	//Negative test case of getting the value where key is null
