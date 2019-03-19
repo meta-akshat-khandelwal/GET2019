@@ -7,7 +7,7 @@ import {users} from '../mockUsers' ;
 })
 export class CardComponent implements OnInit {
 //getting the users list from the mockUsers.ts file
-array_users = users;
+userArray = users;
   constructor() { }
 
   ngOnInit() {

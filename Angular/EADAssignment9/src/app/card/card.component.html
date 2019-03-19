@@ -11,15 +11,15 @@
       <div class="container">
           <div class="row">
             <!--repeat card for every user-->
-              <div class="card col-md-4 border-dark"  *ngFor="let user of array_users">
+              <div class="card col-md-4 border-dark"  *ngFor="let user of userArray">
                 <div class="card-body d-flex flex-column align-items-start">
-                  <img src="assets/img/user_logo.png" height="130">
+                  <img src="assets/img/user_logo.jpg" height="130">
                 </div>
                 <ul>
                     <li class="list-group-item logo card">{{user.name}}</li>
                     <li class="list-group-item logo card">{{user.contact}}</li>
                     <li class="list-group-item logo card">{{user.city}}</li>
-                    <li class="list-group-item logo card"><button class="btn btn-info">Edit</button></li>
+                    <li class="list-group-item logo card"><button class="btn btn-primary">Edit</button></li>
                 </ul>
               </div>
           </div>
