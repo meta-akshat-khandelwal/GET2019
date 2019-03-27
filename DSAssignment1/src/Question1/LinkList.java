@@ -1,5 +1,9 @@
 package Question1;
-
+/**
+ * Linked List with its operations
+ * @author Akshat
+ *
+ */
 
 public class LinkList {
 
@@ -13,8 +17,8 @@ public class LinkList {
 	
 	
 	/*
-	* method checks the list is empty or not
-	* @return true if list is empty or false if not
+	* checks if list is empty or not
+	* @return true if empty, false otherwise
 	*/
 	public boolean isEmpty()
 	{
@@ -24,8 +28,8 @@ public class LinkList {
 	}
 	
 	/*
-	 * addData method add the data into the list
-	 * @param requires the data which is to be added
+	 * add data in list
+	 * @param data to be added
 	 */
 	public void addData(int data)
 	{
@@ -52,7 +56,12 @@ public class LinkList {
 		
 	}
 	
-	//Helper method to rotate the list by the given number of times
+	/*
+	 * helper method to rotate a list 
+	 * @param round
+	 * @param list
+	 * @return  rotated list
+	 */
 	 private LinkList rotate(int round,LinkList list) 
 	    { 
 	        if (round == 0) return list; 
@@ -80,8 +89,8 @@ public class LinkList {
 	  
 	    } 
 
-	    /**
-	     * rotates a list clock wise by given number of times
+	    /*
+	     * rotates a list clock wise direction
 	     * @param left
 	     * @param right
 	     * @param noOfTimes
@@ -135,9 +144,9 @@ public class LinkList {
 	    }
 	
 	/*
-	 * detectLoop method checks whether loop is available in the linked list or not
+	 * to detect loop in list
 	 * @param
-	 * @return true if loop is available in the list or false if not  
+	 * @return true if loop is present, false otherwise  
 	 */
 	public boolean detectLoop()
 	{
@@ -157,6 +166,10 @@ public class LinkList {
 		return false;
 	}
 	
+	/*
+	 * to get head of list 
+	 * @return head of list
+	 */
 	public Node getHead()
 	{
 		return this.head;
