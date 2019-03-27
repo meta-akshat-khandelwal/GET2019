@@ -1,5 +1,9 @@
 package Question1;
-
+/**
+ * 
+ * @author Akshat
+ *
+ */
 public class Node {
 
 	public int data;

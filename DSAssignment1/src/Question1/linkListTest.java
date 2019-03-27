@@ -1,5 +1,9 @@
 package Question1;
 
+/**
+ * @author Akshat
+ */
+
 import static org.junit.Assert.*;
 
 
@@ -10,7 +14,7 @@ public class linkListTest {
 
 	//test case to add data into the linked list
 	@Test
-	public void testAddData()
+	public void testAddDataWithValidInputShouldAddData()
 	{
 		LinkList linkList = new LinkList();
 		linkList.addData(2);
@@ -18,7 +22,7 @@ public class linkListTest {
 	
 	//Negative test case with invalid input to rotate the list
 	@Test
-	public void testRotateWithWrongCoordinates()
+	public void testRotateWithInvalidCoordinatesShouldThrowError()
 	{
 		LinkList linkedList =new LinkList();
 		linkedList.addData(1);
@@ -39,7 +43,7 @@ public class linkListTest {
 	
 	//test case to rotate the linked list with the given coordinates
 	@Test
-	public void testRotateWithValidCoordinates()
+	public void testRotateWithValidCoordinatesShouldRotate()
 	{
 		
 		LinkList linkedList =new LinkList();
@@ -69,7 +73,7 @@ public class linkListTest {
 	
 	//test case to detect loop in the linked list
 	@Test
-	public void testDetectLoop()
+	public void testDetectLoopWithValidinputShouldReturnFalse()
 	{
 		LinkList linkedList =new LinkList();
 		linkedList.addData(1);

@@ -1,12 +1,14 @@
 package Question3;
-
+/**
+ * @author Akshat
+ */
 import org.json.simple.JSONArray;
 
 public class NestedList {
-	//Linked List to store the nested list
+
 		LinkedList nestedList = new LinkedList();
 
-		//constructor to create the nested list from the JSON array
+
 		public NestedList(JSONArray jsonArray) throws Exception 
 		{
 			if(jsonArray == null)
@@ -20,10 +22,10 @@ public class NestedList {
 			}
 		}
 		
-		/**
-		 * Private helper method to get the value from the JSON and store using linked allocation
-		 * @param jsonArray which contains the input value
-		 * @return the linked list which contain the input value 
+		/*
+		 * Helper method to get the value from the JSON and store in linked list
+		 * @param jsonArray
+		 * @return  linked list
 		 */
 		private LinkedList createNestList(JSONArray jsonArray) 
 		{
@@ -49,9 +51,9 @@ public class NestedList {
 			return sublist;
 		}
 
-		/**
+		/*
 		 * getSum method to get the sum of the whole list
-		 * @return the sum of the whole list
+		 * @return sum of whole list
 		 */
 
 		public Long getSum() 
@@ -59,11 +61,11 @@ public class NestedList {
 			Node head = nestedList.getHead();
 			return sumOfAllValues(head);
 		}
-		
-		/**
-		 * private helper method to get the sum of the whole list
-		 * @param node is the starting node from which sum is to be calculated
-		 * @return the sum of the whole list
+	
+		/*
+		 * Helper method to get the sum of the whole list
+		 * @param starting node from where sum is to calculate
+		 * @return sum of whole list
 		 */
 		private Long sumOfAllValues(Node node)
 		{
@@ -90,9 +92,9 @@ public class NestedList {
 			return sum;
 		}
 
-		/**
-		 * method to get the maximum value from the list
-		 * @return the max value from the list
+		/*
+		 * get the maximum value from list
+		 * @return max value
 		 */
 
 		public Long getMaxValue() 
@@ -101,10 +103,10 @@ public class NestedList {
 			return getMaxValueFromList(head);
 		}
 
-		/**
-		 * private helper method to find the maximum value from the list
+		/*
+		 * Helper method to find the maximum value from list
 		 * @param node 
-		 * @return the value which is maximum in the list
+		 * @return maximum value
 		 */
 		private Long getMaxValueFromList(Node node) 
 		{
@@ -136,10 +138,10 @@ public class NestedList {
 			return max;
 		}
 
-		/**
-		 * method to check whether given value is available in the list
-		 * @param value is to be searched for
-		 * @return true if value is present or false
+		/*
+		 *To check whether given value is available in list
+		 * @param value
+		 * @return true if present, false otherwise
 		 */
 
 		public boolean isValueAvailable(int value)
@@ -148,11 +150,11 @@ public class NestedList {
 			return searchValue(head, value);
 		}
 		
-		/**
-		 * private helper method to search the given value in the list
-		 * @param node is the starting node from which searching to be start
-		 * @param value to be searched for
-		 * @return true if value is available or false
+		/*
+		 * Helper method to search the value in  list
+		 * @param node is starting node 
+		 * @param value to be search
+		 * @return true if available,false otherwise
 		 */
 		private boolean searchValue(Node node, int value) 
 		{

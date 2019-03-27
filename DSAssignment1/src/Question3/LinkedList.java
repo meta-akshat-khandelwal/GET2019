@@ -1,16 +1,20 @@
 package Question3;
-
+/**
+ * LinkedList with basic operations
+ * @author admin
+ *
+ */
 public class LinkedList {
 
 	private Node head;
 	
-	//constructor to initialize the linked list with null
+
 	public LinkedList()
 	{
 		head=null;
 	}
 	
-	/**
+	/*
 	 * to add the data into the linked list
 	 * @param data to be added into the list
 	 */
@@ -35,8 +39,8 @@ public class LinkedList {
 			
 		}
 	}
-	
-	/**
+
+	/*
 	 * to get the head of the linked list
 	 * @return the head of the linked list
 	 */
@@ -45,7 +49,7 @@ public class LinkedList {
 		return this.head;
 	}
 	
-	/**
+	/*
 	 * to check whether linked list is empty or not
 	 * @return true if list is empty or false if not
 	 */
