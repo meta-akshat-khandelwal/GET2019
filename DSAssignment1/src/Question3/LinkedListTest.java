@@ -14,7 +14,7 @@ NestedList nestedListImpl;
 	
 	//to initialize the constructor with the JSON array 
 	@Before
-	public void test() throws Exception
+	public void testBefore() throws Exception
 	{
 		JSONArray json = null;
 		JSONParser parser = new JSONParser();
@@ -30,28 +30,28 @@ NestedList nestedListImpl;
 		nestedListImpl = new NestedList(json);
 	}
 	
-	//test case to get the sum of whole list
+	//to get the sum of whole list
 	@Test
-	public void testSumOfList()
+	public void testSumOfListWithValidInputShouldReturnSum()
 	{
 		assertEquals(190, nestedListImpl.getSum(),0);
 	}
 	
-	//test case to search the value from the list
+	// to search the value from the list
 	@Test
-	public void testSearchValue()
+	public void testSearchValueWithValidInputShouldReturnTrue()
 	{
 		assertEquals(true, nestedListImpl.isValueAvailable(2));
 	}
 	
-	//Negative test case to search the value in the list
+	// to search the value in the list
 	@Test
-	public void testSearchValue2()
+	public void testSearchValueWithValidInputShouldReturnFalse()
 	{
 		assertEquals(false, nestedListImpl.isValueAvailable(20));
 	}
 	
-	//test case to get the maximum value from the list
+	// to get the maximum value from the list
 	@Test
 	public void getLargestValue()
 	{

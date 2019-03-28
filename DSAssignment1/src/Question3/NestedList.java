@@ -80,7 +80,8 @@ public class NestedList {
 						sum += (Long) node.getData();
 						node = node.getNext();
 					}
-					//if node is pointing to another linked list then call the same method recursively
+					//if node is pointing to another linked list then 
+					//call the same method recursively
 					else
 					{
 						Node head = ((LinkedList)node.getData()).getHead();
@@ -125,7 +126,8 @@ public class NestedList {
 						}
 						node = node.getNext();
 					}
-					//if node is pointing to another linked list then call the same method recursively
+					//if node is pointing to another linked list then call the 
+					//same method recursively
 					else
 					{
 						Node head = ((LinkedList)node.getData()).getHead();
@@ -171,7 +173,8 @@ public class NestedList {
 						}
 						node = node.getNext();
 					}
-					//if node is pointing to another linked list then call the same method recursively
+					//if node is pointing to another linked list then 
+					//call the same method recursively
 					else
 					{
 						Node head = ((LinkedList)node.getData()).getHead();
